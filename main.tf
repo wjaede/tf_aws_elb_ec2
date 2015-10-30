@@ -24,5 +24,5 @@ resource "aws_elb" "vpc" {
     target = "HTTP:80/"
     interval = 10
   }
-  instances = ["${split(",", var.backend_ids)}" ]
+  instances = ["${split(",", var.instance_ids)}" ]
 }
