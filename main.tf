@@ -11,7 +11,9 @@ resource "aws_elb" "vpc" {
   name = "${var.app_name}"
   subnets = [ "${split(",", var.sbn_ids)}" ]
   security_groups =  [ "${split(",", var.sg_ids)}" ]
-  listener {
+  listener = ["${var.listener}"]
+  health_check = ["${var.health_check}"]
+  /*listener {
     instance_port = 80
     instance_protocol = "http"
     lb_port = 80
@@ -23,6 +25,7 @@ resource "aws_elb" "vpc" {
     timeout = 3
     target = "HTTP:80/"
     interval = 10
-  }
+  }*/
+
   instances = ["${split(",", var.instance_ids)}" ]
 }
