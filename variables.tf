@@ -29,3 +29,15 @@ variable "health_check"             {
 variable "hc_target"               {
   default = "HTTP:80/"
 }
+variable "listener_instance_port"  {
+  default = "80"
+}
+variable "listener_instance_protocol" {
+  default = "http"
+}
+variable "listener_lb_port"        {
+  default = "80"
+}
+variable "listener_lb_protocol"    {
+  default = "http"
+}

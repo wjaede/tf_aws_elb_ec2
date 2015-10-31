@@ -13,10 +13,10 @@ resource "aws_elb" "vpc" {
   security_groups =  [ "${split(",", var.sg_ids)}" ]
 
   listener {
-    instance_port = "${var.listener.instance_port}"
-    instance_protocol = "${var.listener.instance_protocol}"
-    lb_port = "${var.listener.lb_port}"
-    lb_protocol = "${var.listener.lb_protocol}"
+    instance_port = "${var.listener_instance_port}"
+    instance_protocol = "${var.listener_instance_protocol}"
+    lb_port = "${var.listener_lb_port}"
+    lb_protocol = "${var.listener_lb_protocol}"
   }
   health_check {
     healthy_threshold = "${var.health_check.healthy_threshold}"
