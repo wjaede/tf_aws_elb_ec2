@@ -25,3 +25,7 @@ variable "health_check"             {
     interval = 10
   }
 }
+
+variable "hc_target"               {
+  default = "HTTP:80/"
+}
