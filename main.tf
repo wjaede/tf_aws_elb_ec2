@@ -15,7 +15,7 @@ resource "aws_elb" "vpc" {
   listener {
     instance_port = "${var.listener.instance_port}"
     instance_protocol = "${var.listener.instance_protocol}"
-    lb_port = "${var.listener.lb_portt}"
+    lb_port = "${var.listener.lb_port}"
     lb_protocol = "${var.listener.lb_protocol}"
   }
   health_check {
